@@ -1,6 +1,32 @@
 # New User-Group Setup
 
 ## Linux
+- Install WSL
+```shell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux
+
+
+
+
+
+
+
+
+
+apt-get update && apt-get install -y \
+    git \
+    curl \
+    build-essential \
+    wget && \
+    rm -rf /var/lib/apt/lists/* && \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+
+
+
+
+
+
 - Create a new group:
 ```bash
 sudo groupadd <new_group_name>
@@ -8,7 +34,7 @@ sudo groupadd <new_group_name>
 
 - Create a new user:
 ```bash
-sudo useradd -m <new_username>
+sudo useradd -r -g  <new_username>
 ```
 The -m flag creates a home directory for the user.
 
