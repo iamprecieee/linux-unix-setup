@@ -30,3 +30,18 @@ Verify Installation. Check WSL and Ubuntu status:
 ```shell
 wsl --list --verbose
 ```
+
+Install rust on wsl
+```bash
+sudo apt-get update && apt-get install -y \
+    git \
+    curl \
+    build-essential \
+    wget && \
+    rm -rf /var/lib/apt/lists/* && \
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+```
+Add rust to env
+```bash
+. "$HOME/.cargo/env"
+```
