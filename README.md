@@ -31,13 +31,17 @@ Verify Installation. Check WSL and Ubuntu status:
 wsl --list --verbose
 ```
 
-Install rust on wsl
+To install rust (and necessary dependencies for nexus) on wsl
 ```bash
-sudo apt-get update && apt-get install -y \
+sudo apt update && sudo apt upgrade && apt install -y \
     git \
     curl \
     build-essential \
-    wget && \
+    pkg-config \
+    libssl-dev \
+    git-all
+    wget \
+    -y protobuf-compiler && \
     rm -rf /var/lib/apt/lists/* && \
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ```
