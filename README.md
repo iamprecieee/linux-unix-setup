@@ -41,7 +41,7 @@ sudo apt update && sudo apt upgrade && apt install -y \
     libssl-dev \
     git-all
     wget \
-    -y protobuf-compiler && \
+    protobuf-compiler && \
     rm -rf /var/lib/apt/lists/* && \
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ```
