@@ -7,7 +7,7 @@ First, open PowerShell as Administrator and run
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
-- Restart your to complete the feature installation.
+- Restart your computer to complete the feature installation.
 - Download and install Ubuntu from Microsoft store.
 - Set WSL 2 as Default, open PowerShell and run:
 ```shell
@@ -31,7 +31,13 @@ Verify Installation. Check WSL and Ubuntu status:
 wsl --list --verbose
 ```
 
-To install rust (and necessary dependencies for nexus) on wsl
+To launch Ubuntu from the terminal:
+```shell
+wsl
+```
+
+### Extras
+To install necessary dependencies for python on WSL:
 ```bash
 sudo apt update && sudo apt upgrade && apt install -y \
     git \
@@ -39,13 +45,10 @@ sudo apt update && sudo apt upgrade && apt install -y \
     build-essential \
     pkg-config \
     libssl-dev \
-    git-all
     wget \
-    protobuf-compiler && \
-    rm -rf /var/lib/apt/lists/* && \
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-```
-Add rust to env
-```bash
-. "$HOME/.cargo/env"
+    protobuf-compiler \
+    python3 \
+    python3-pip \
+    unzip \
+    python3-venv
 ```
