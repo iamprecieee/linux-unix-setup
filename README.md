@@ -8,7 +8,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 - Restart your computer to complete the feature installation.
-- Download and install Ubuntu from Microsoft store.
+- Download and install Ubuntu 22.04 LTS from Microsoft store.
 - Set WSL 2 as Default, open PowerShell and run:
 ```shell
 wsl --set-default-version 2
@@ -34,6 +34,20 @@ wsl --list --verbose
 To launch Ubuntu from the terminal:
 ```shell
 wsl
+```
+
+To setup a new user:
+```bash
+adduser <new_username>
+# Then set and confirm password
+```
+- Add new user to sudoers group to grant `sudo` privileges.
+```bash
+usermod -aG sudo <new_username>
+```
+- Switch to new user
+```bash
+su <new_username>
 ```
 
 ### Extras
