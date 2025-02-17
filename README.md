@@ -40,6 +40,7 @@ To setup a new user:
 ```bash
 adduser <new_username>
 # Then set and confirm password
+# Test ignore
 ```
 - Add new user to sudoers group to grant `sudo` privileges.
 ```bash
