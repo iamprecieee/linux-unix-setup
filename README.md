@@ -66,4 +66,3 @@ sudo apt update && sudo apt upgrade && apt install -y \
     unzip \
     python3-venv
 ```
-
