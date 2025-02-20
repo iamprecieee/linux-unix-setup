@@ -67,4 +67,4 @@ sudo apt update && sudo apt upgrade && apt install -y \
     python3-venv
 ```
 
-...
+...mdsmn
