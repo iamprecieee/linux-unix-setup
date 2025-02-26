@@ -102,7 +102,7 @@ ALTER USER <your_username> WITH CREATEDB;
 
 - Set database ownership to new user:
 ```sql
-ALTER DATABASE <your_database_name> TO <your_username>;
+ALTER DATABASE <your_database_name> OWNER TO <your_username>;
 ```
 
 - To exit psql:
