@@ -66,3 +66,56 @@ sudo apt update && sudo apt upgrade && apt install -y \
     unzip \
     python3-venv
 ```
+
+
+# Install and setup postgresql
+
+- Install postgres:
+```bash
+sudo apt update && sudo apt install postgresql postgresql-contrib
+```
+
+- Start and enable the postgres service:
+```bash
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+```
+
+- Connect via default user:
+```bash
+sudo -u postgres psql
+```
+
+- Create new user/role:
+```sql
+CREATE USER <your_username> WITH PASSWORD '<your_password>';
+CREATE DATABASE <your_database_name>;
+GRANT ALL PRIVILEGES ON DATABASE <your_database_name> TO <your_username>;
+```
+
+- Grant permissions to new user:
+```sql
+GRANT CREATE ON SCHEMA public TO <your_username>;
+GRANT ALL PRIVILEGES ON SCHEMA public TO <your_username>;
+ALTER USER <your_username> WITH CREATEDB;
+```
+
+- Set database ownership to new user:
+```sql
+ALTER DATABASE <your_database_name> TO <your_username>;
+```
+
+- To exit psql:
+```bash
+exit
+```
+
+- Connect to your db using URL:
+```bash
+postgresql://<your_username>:<your_password>@localhost:5432/<your_database_name>
+```
+
+- Connect to your db using psql:
+```bash
+psql -U <your_username> -d <your_database_name>
+```
